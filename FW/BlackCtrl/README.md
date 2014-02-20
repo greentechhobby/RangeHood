@@ -26,7 +26,8 @@ Step by step How To use Ti Capsense:
          
          .threshold = PLUS_THRESHOLD,
       };
- ```
+  ```
+  
 2. Define an array of pointers to all sckey obj with NULL terminators:
 ```cpp
       TICAPS_Sckey_Obj* gSckeys[] = {
@@ -38,17 +39,20 @@ Step by step How To use Ti Capsense:
          NULL   // terminator
       };
 ```
-3. call the init method:
+
+3.. call the init method:
 ```cpp
       TICAPS_sckey_init(gSckeys);
 ```
-4. Periodically call the run method in a loop or ISR:
+
+4.. Periodically call the run method in a loop or ISR:
 ```cpp
        if(gMain.initialized == 1){
          TICAPS_sckey_run(gSckeys);
        }
 ```
-5. Check if any buttons is detected then debounce or do anything:
+
+5.. Check if any buttons is detected then debounce or do anything:
 ```cpp
       if(gTimer_key.detected){
          LED_TIMER_TOGGLE;
